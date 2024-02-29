@@ -27,6 +27,6 @@ jobs:
         username: "sud0x67"
         password: ${{ secrets.DOCKER_TOKEN }}
     - name: Build the Docker image
-      run: docker build . --file ./Dockerfile --tag sud0x67/crypto-strategy:latest
+      run: docker build . --file ./Dockerfile --tag sud0x67/crypto-trade:latest
     - name: Push to private dockerhub
       run: docker push sud0x67/crypto-trade:latest
