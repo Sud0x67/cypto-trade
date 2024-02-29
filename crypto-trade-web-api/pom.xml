@@ -12,6 +12,7 @@
     <version>0.0.1</version>
     <name>crypto-trade-web-api</name>
     <description>crypto-trade-web-api</description>
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
