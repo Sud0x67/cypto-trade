@@ -10,13 +10,15 @@
 	</parent>
 	<groupId>com.sud0x67</groupId>
 	<artifactId>crypto-trade</artifactId>
-	<version>${project.version}</version>
+	<version>0.0.1</version>
 	<name>crypto-trade</name>
 	<packaging>pom</packaging>
 	<description>crypto-trade</description>
 	<properties>
 		<java.version>17</java.version>
-		<project.version>0.0.1-SNAPSHOT</project.version>
+		<crypto-trade.version>0.0.1</crypto-trade.version>
+		<fastjson.version>1.2.76</fastjson.version>
+		<spotless.version>2.42.0</spotless.version>
 	</properties>
 	<modules>
 		<module>crypto-trade-web-api</module>
@@ -40,6 +42,49 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>com.diffplug.spotless</groupId>
+				<artifactId>spotless-maven-plugin</artifactId>
+				<version>${spotless.version}</version>
+				<configuration>
+					<formats>
+						<!-- you can define as many formats as you want, each is independent -->
+						<format>
+							<!-- define the files to apply to -->
+							<includes>
+								<include>.gitignore</include>
+							</includes>
+							<!-- define the steps to apply to those files -->
+							<trimTrailingWhitespace/>
+							<endWithNewline/>
+							<indent>
+								<tabs>true</tabs>
+								<spacesPerTab>4</spacesPerTab>
+							</indent>
+						</format>
+					</formats>
+					<!-- define a language-specific format -->
+					<java>
+						<!-- no need to specify files, inferred automatically, but you can if you want -->
+
+						<!-- apply a specific flavor of google-java-format and reflow long strings -->
+						<googleJavaFormat>
+							<version>1.19.2</version>
+							<style>GOOGLE</style>
+							<reflowLongStrings>true</reflowLongStrings>
+							<formatJavadoc>true</formatJavadoc>
+						</googleJavaFormat>
+
+						<!-- make sure every file has the following copyright header.
+                          optionally, Spotless can set copyright years by digging
+                          through git history (see "license" section below) -->
+						<licenseHeader>
+							<content>/* (C)$YEAR  Sud0x67@github.com */</content>  <!-- or <file>${project.basedir}/license-header</file> -->
+						</licenseHeader>
+					</java>
 				</configuration>
 			</plugin>
 		</plugins>

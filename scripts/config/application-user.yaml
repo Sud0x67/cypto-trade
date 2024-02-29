@@ -1,0 +1,5 @@
+server:
+  port: 8080
+binance:
+  ak: 2leVc6YRieipIvZQu47XQ4SOES0t7GOjnVxG1JtlzXq4bdMICGAM3G4svYfqezIE
+  sk: jzRSXha71LJ0mAsMaA4KeptRQsyjaFY2kN0bR0iZWMOgIej6VqhqHzdxM4em92Xp

@@ -5,11 +5,12 @@
     <parent>
         <groupId>com.sud0x67</groupId>
         <artifactId>crypto-trade</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+<!--        <version>0.0.1-SNAPSHOT</version>-->
+        <version>0.0.1</version>
     </parent>
     <groupId>com.sud0x67</groupId>
     <artifactId>crypto-trade-core</artifactId>
-    <version>${project.version}</version>
+    <version>0.0.1</version>
     <name>crypto-trade-core</name>
     <description>crypto-trade-core</description>
     <dependencies>
@@ -29,9 +30,27 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.github.binance/binance-connector-java -->
+        <dependency>
+            <groupId>io.github.binance</groupId>
+            <artifactId>binance-connector-java</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
