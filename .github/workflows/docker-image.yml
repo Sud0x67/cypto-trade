@@ -29,4 +29,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file ./Dockerfile --tag sud0x67/crypto-strategy:latest
     - name: Push to private dockerhub
-      run: docker push docker push sud0x67/crypto-trade:latest
+      run: docker push sud0x67/crypto-trade:latest
