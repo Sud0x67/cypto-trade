@@ -21,7 +21,7 @@
 		<spotless.version>2.42.0</spotless.version>
 	</properties>
 	<modules>
-		<module>crypto-trade-web-api</module>
+		<module>crypto-trade-application</module>
 		<module>crypto-trade-core</module>
 	</modules>
 	<dependencies>
