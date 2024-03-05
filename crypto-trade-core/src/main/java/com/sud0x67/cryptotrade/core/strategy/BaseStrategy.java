@@ -3,10 +3,9 @@ package com.sud0x67.cryptotrade.core.strategy;
 
 import com.sud0x67.cryptotrade.core.entity.TradeContext;
 import com.sud0x67.cryptotrade.core.enums.OrderSymbol;
-import com.sud0x67.cryptotrade.core.utils.Constant;
 import java.util.HashMap;
 
-public abstract class BaseStrategy implements Constant {
+public abstract class BaseStrategy {
 
   HashMap<OrderSymbol, TradeContext> contextHashMap = new HashMap<>();
 

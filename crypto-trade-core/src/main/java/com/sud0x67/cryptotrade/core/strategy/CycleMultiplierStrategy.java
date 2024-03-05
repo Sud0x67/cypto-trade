@@ -6,24 +6,22 @@ import com.sud0x67.cryptotrade.core.entity.TradeContext;
 import com.sud0x67.cryptotrade.core.enums.OrderStatus;
 import com.sud0x67.cryptotrade.core.enums.OrderSymbol;
 import com.sud0x67.cryptotrade.core.service.SpotService;
-import com.sud0x67.cryptotrade.core.utils.Constant;
+import java.util.Set;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class CycleMultiplierStrategy extends BaseStrategy implements Constant {
+public class CycleMultiplierStrategy extends BaseStrategy implements TradeStrategy {
 
   private final SpotService spotService;
+  private final OrderSymbol symbol;
 
   public CycleMultiplierStrategy(SpotService spotService) {
     this.spotService = spotService;
+    this.symbol = OrderSymbol.BTCFDUSD;
   }
 
-  /**
-   * 启动交易策略
-   *
-   * @param symbol 交易对
-   */
-  public void execute(OrderSymbol symbol) {
+  /** invoke the strategy */
+  public void invoke() {
     // 查询是否有成交订单
     TradeContext tradeContext = loadContext(symbol);
     if (tradeContext == null) {
@@ -67,14 +65,12 @@ public class CycleMultiplierStrategy extends BaseStrategy implements Constant {
     saveContext(tradeContext, symbol);
   }
 
-  /**
-   * 终止交易策略
-   *
-   * @param name 策略名称
-   */
-  public void stop(String name) {}
+  @Override
+  public Set<OrderSymbol> getRequestOrderSymbols() {
+    return Set.of(OrderSymbol.BTCFDUSD);
+  }
 
   public String getName() {
-    return "CycleMultiplierStrategyV2";
+    return "CycleMultiplierStrategy";
   }
 }
